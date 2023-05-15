@@ -1,0 +1,106 @@
+:root {
+  --primary-100:#0085ff;
+  --primary-200:#69b4ff;
+  --primary-300:#e0ffff;
+  --accent-100:#006fff;
+  --accent-200:#e1ffff;
+  --text-100:#FFFFFF;
+  --text-200:#9e9e9e;
+  --bg-100:#1E1E1E;
+  --bg-200:#2d2d2d;
+  --bg-300:#454545;
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}   
+
+html {
+  font-size: 16px;
+}
+
+#main-container {
+  font-family: 'GmarketSansMedium';
+  width : 100%;
+  height : 100vh;
+  background-color : var(--bg-100);
+  color : var(--text-100);
+  display : flex;
+  align-items : center;
+  justify-content : center;
+}
+
+#list-container {
+  width : 500px;
+  height : 786px;
+  padding : 2rem;
+  background-color : var(--bg-200);
+  border-radius : 12px;
+  display : flex;
+  flex-direction : column;
+  position : relative;
+  overflow-y : scroll;
+}
+
+.list-item {
+  display : flex;
+  align-items : center;
+  justify-content : space-between;
+  padding : 1rem;
+  margin-bottom : 1rem;
+  background-color : var(--bg-300);
+  border-radius : 12px;
+}
+
+.list-content {
+  display : flex;
+  align-items : center;
+}
+
+.list-days {
+  font-size : .75rem;
+  color : var(--primary-200);
+}
+
+.list-title {
+  font-size : 1.25rem;
+  margin-left : 2rem;
+}
+
+#input-form {
+  position : absolute;
+  left : 0;
+  bottom : 1rem;
+  width : 100%;
+  height : 32px;
+  display : flex;
+  justify-content : center;
+}
+
+.input-box {
+  margin-right : .25rem;
+}
+
+.input-btn {
+  color : var(--text-100);
+  background-color : var(--primary-200);
+  transition : 300ms all;
+}
+
+.input-btn:hover {
+  background-color : var(--primary-100);
+}
+
+.del-btn {
+  color : var(--bg-200);
+  background-color : var(--primary-200);
+  margin-left : .25rem;
+  transition : 300ms all;
+}
+
+.del-btn:hover {
+  background-color : tomato;
+}
