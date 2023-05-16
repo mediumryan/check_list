@@ -9,17 +9,17 @@ export default function App() {
     {
       id : 0,
       title : '놀기',
-      checked : true,
+      checked : false,
     },
     {
       id : 1,
       title : '먹기',
-      checked : true,
+      checked : false,
     },
     {
       id : 2,
       title : '자기',
-      checked : true,
+      checked : false,
     },
   ]);
 
@@ -31,20 +31,38 @@ export default function App() {
     e.preventDefault();
     const copy = [...list];
     const newId = (copy.length);
-    copy.push(
-      {
-      id : newId,
-      title : value,
-      checked : true,
-      }
-    );
-    setList(copy);
-    setValue('');
+    if(value !== '') {
+      copy.push(
+        {
+        id : newId,
+        title : value,
+        checked : false,
+        }
+      );
+      setList(copy);
+      setValue('');
+    }
+  }
+
+  function delSelected() {
+    const selectedList = list.filter((a) => a.checked == false);
+    setList(selectedList);
+  }
+
+  function selectAll() {
+    const copy = [...list];
+    const AllSelected = copy.map((item) => item.checked === false ? { ...item, checked: true} : item);
+    setList(AllSelected);
   }
   
   return (
     <div id='main-container'>
       <div id='list-container'>
+        <div className='top-btn-container'>
+          <button className='all-btn' onClick={()=>{selectAll()}}>모두선택</button>
+          <button className='del-btn' onClick={()=>{delSelected()}}>선택삭제
+          </button>
+        </div>
         {
           list.map((item,index) => {
             return(
@@ -66,7 +84,6 @@ export default function App() {
             value={value}
             />
           <button className='input-btn'>추가하기</button>
-          <button className='del-btn'>선택삭제</button>
         </form>
       </div>
     </div>
