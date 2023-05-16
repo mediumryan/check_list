@@ -5,23 +5,7 @@ import {React, useState, useEffect} from 'react';
 export default function App() {
 
   const [value, setValue] = useState('');
-  const [list, setList] = useState([
-    {
-      id : 0,
-      title : '놀기',
-      checked : false,
-    },
-    {
-      id : 1,
-      title : '먹기',
-      checked : false,
-    },
-    {
-      id : 2,
-      title : '자기',
-      checked : false,
-    },
-  ]);
+  const [list, setList] = useState([]);
 
   function getValue(e) {
     setValue(e.target.value);
